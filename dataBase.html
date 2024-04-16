@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <form method="post" action="database.php">
+    <center>
+      <table>
+        <tr>
+          <td>Name</td>
+          <td>
+            <input type="text" name="user_name" id="user_name" required/>
+          </td>
+        </tr>
+        <tr>
+          <td>Gender</td>
+          <td>
+            <input type="radio" name="gender" id="male" value="Male" required/> Male
+            <input type="radio" name="gender" id="female" value="Female" required/>Female
+          </td>
+        </tr>
+        <tr>
+          <td>Enrollment Number</td>
+          <td>
+            <input type="number" name="enrollment" id="enrollment" required/>
+          </td>
+        </tr>
+        <tr>
+          <td>Branch</td>
+          <td>
+            <input type="text" name="branch" id="branch"required />
+          </td>
+        </tr>
+        <tr>
+          <td>Address</td>
+          <td>
+            <textarea name="address" id="address" cols="40" rows="10"required></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>Hobbies</td>
+          <td>
+            <input type="checkbox" name="hobbie[]" value="Gamning" />Gamning
+            <input type="checkbox" name="hobbie[]" value="Singing" />Singing
+            <input type="checkbox" name="hobbie[]" value="Reading" />Reading
+            <input type="checkbox" name="hobbie[]" value="Coading" />Coading
+            <input type="checkbox" name="hobbie[]" value="Dancing" />Dancing
+          </td>
+        </tr>
+      </table>
+      <input name="submit" type="submit" value="submit here">
+  </form>
+  </center>
+  </form>
+</body>
+
+</html>

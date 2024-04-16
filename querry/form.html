@@ -1,0 +1,50 @@
+<html>
+    <head><title>Form</title></head>
+    <body>
+        <center><h1>Regestration Form</h1></center>
+        <center>
+            <form method="post" action="insert.php">
+                <table>
+                    <tr>
+                        <td>Name</td>
+                        <td>:</td>
+                        <td><input type="text" name="name" pattern="[a-zA-Z]{2,15}" required></td>
+                    </tr>
+                    <tr>
+                        <td>Student ID</td>
+                        <td>:</td>
+                        <td><input type="text" name="stu_id" pattern="[0-9]{6}" required></td>
+                    </tr>
+                    <tr>
+                        <td>Enrollment ID</td>
+                        <td>:</td>
+                        <td><input type="text" name="enroll_id" pattern="[0-9]{12}" required></td>
+                    </tr>
+                    <tr>
+                        <td>Mobile NO.</td>
+                        <td>:</td>
+                        <td><input type="text" name="mob_no" pattern="[0-9]{10}" required></td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td>:</td>
+                        <td><input type="radio" name="Gender" value="male" checked>Male</td>
+                        <td><input type="radio" name="Gender" value="female" checked>Female</td>
+                    </tr>
+                    <tr>
+                        <td>Hobbies</td>
+                        <td>:</td>
+                        <td><input type="checkbox" name="hob[]" value="reading">Reading 
+                        <input type="checkbox" name="hob[]" value="Writting">Writting
+                        <input type="checkbox" name="hob[]" value="Singing">Singing 
+                        <input type="checkbox" name="hob[]" value="Drawing">Drawing </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="submit" name="submit"> </td>
+                    </tr>
+               </table>
+            </form>
+        </center>
+    </body>
+</html>
