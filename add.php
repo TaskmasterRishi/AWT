@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Addition</title>
+    <title>Calculator</title>
 </head>
 <body>
     <form method="post" action="">
         <table>
             <tr>
-                <td><label for="number1">Number one :</td>
+                <td><label for="number1">Number one :</label></td>
                 <td><input type="number" name="number1" id="number1" required></td>
             </tr>
             <tr>
-                <td><lable for="number2">Number two :</td>
-                <td><input type="number" name="number2" id="number2" require></td>
+                <td><label for="number2">Number two :</label></td>
+                <td><input type="number" name="number2" id="number2" required></td>
             </tr>
             <tr>
-                <td><lable for="operations">Operations :</td>
+                <td><label for="operations">Operations :</label></td>
                 <td>
                     <select name="operations" id="operations">
                             <option value="+">+</option>
@@ -25,39 +25,40 @@
                             <option value="/">/</option>
                             <option value="*">*</option>
                     </select>
-                    <td>
+                </td>
             </tr>
         </table>
-        <button type="Submit" value="Submit">Submit</button>
+        <button type="submit" value="Submit">Submit</button>
         <button type="reset" value="reset">Reset</button>
     </form>
 </body>
 </html>
 
 <?php 
-    if($_SERVER["REQUEST_METHOD"]=="POST"){
-    $num1 = $_POST["number1"];
-    $num2 = $_POST["number2"];
-    $ans;
-    $operation = $_POST["operations"];
-
-    if($num2 == 0){
-        trigger_error("Cannot divide by zero", E_USER_ERROR);
-    }
+function calculate($num1, $num2, $operation) {
     switch($operation){
         case '+':
-            $ans = $num1 + $num2;
-            break;
+            return $num1 + $num2;
         case '-':
-            $ans = $num1 - $num2;
-            break;
+            return $num1 - $num2;
         case '/':
-            $ans = $num1 / $num2;
-            break;
+            if($num2 == 0){
+                return "Cannot divide by zero";
+            }
+            return $num1 / $num2;
         case '*':
-            $ans = $num1 * $num2;
-            break;
+            return $num1 * $num2;
+        default:
+            return "Invalid operation";
     }
-    echo "Answer is $ans";
+}
+
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+    $num1 = $_POST["number1"];
+    $num2 = $_POST["number2"];
+    $operation = $_POST["operations"];
+
+    $result = calculate($num1, $num2, $operation);
+    echo "Answer is $result";
 }
 ?>

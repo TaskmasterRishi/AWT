@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<?php
-$conn = mysqli_connect("localhost", "root", "", "Full_Form")
-    ?>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Image Upload</title>
 </head>
-
 <body>
     <form action="" method="post" enctype="multipart/form-data">
-        Uplaod image :
+        Upload image:
         <input type="file" name="file">
         <button type="submit" name="submit">Upload</button>
     </form>
 </body>
-
 </html>
+
 <?php
+// Database connection
+$conn = mysqli_connect("localhost", "root", "", "Full_Form");
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset ($_FILES['file'])) {
-        // $file = $_FILES['file'];
+    if (isset($_FILES['file'])) {
         $fileName = $_FILES['file']['name'];
         $fileTmpName = $_FILES['file']['tmp_name'];
         $fileSize = $_FILES['file']['size'];
@@ -37,24 +36,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (in_array($fileExt, $allowed)) {
                 if ($fileSize < 10000000) {
                     $fileNameNew = uniqid('', true) . "." . $fileExt;
-                    $fileDestination = '/opt/lampp/htdocs/awt/' . $fileNameNew;
+                    $fileDestination = __DIR__ . "/image/" . $fileNameNew;
 
                     if (move_uploaded_file($fileTmpName, $fileDestination)) {
-                        // header("Location: upload.html?uploadsuccess");
                         echo '<p>You uploaded the following image:<br/>';
                         $sql = "INSERT INTO image (imagename) VALUES ('$fileNameNew')";
                         if (mysqli_query($conn, $sql)) {
                             echo "New record created successfully";
                         } else {
-                            echo "Error: " . $sql . "<br>" . mysqli_error($con);
+                            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
                         }
 
                         $result = mysqli_query($conn, "SELECT * FROM image");
                         while ($data = mysqli_fetch_array($result)) {
-                            echo '<img src="' . $data["imagename"] . '"/>';
+                            echo '<img src="image/' . $data["imagename"] . '"/>';
                         }
-                        echo '"<h2>File Download</h2><br>
-                                <a href="' . $fileNameNew . '" download>Download</a>';
+                        echo '</p>';
+                        echo '<h2>File Download</h2><br>';
+                        echo '<a href="image/' . $fileNameNew . '" download>Download</a>';
                         exit();
                     } else {
                         echo "Error occurred while uploading the file.";
