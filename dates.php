@@ -10,4 +10,21 @@ $ageInDays = $diff->format("%R%a");
 $ageInYears = $ageInDays / 365;
 
 echo (int)$ageInYears;
+if ($ageInDays % 2 == 0) {
+    $color="red";
+}
+else{
+    $color= "blue";
+}
 ?>
+
+<html>
+    <head>
+        <title>Date</title>
+    </head>
+    <style>
+        *{
+            background-color: <?php echo $color ?>;
+        }
+    </style>
+</html>
