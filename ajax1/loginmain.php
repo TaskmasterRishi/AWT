@@ -29,7 +29,7 @@
                         if(response.trim() === 'success') {
                             $('#message').html("Login successful! Redirecting to home page...");
                             setTimeout(function(){
-                                window.location.href = 'home.html';
+                                window.location.href = 'welcome.html';
                             }, 2000);
                         } else if (response.trim() === 'not_registered') {
                             $('#message').html("User is not registered. Redirecting to registration page...");

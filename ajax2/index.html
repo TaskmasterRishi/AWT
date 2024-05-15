@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>City Information</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+    <h1><b>Select City</b></h1>
+    <select name="cityDropdown" id="cityDropdown">
+        <option value="">Select City</option>
+        <option value="New York">New York</option>
+        <option value="Gujarat">Gujarat</option>
+    </select>
+
+    <h2>City Information</h2>
+    <div class="cityInfo"></div>
+
+    <script>
+        $(document).ready(function () {
+            $('#cityDropdown').change(function () {
+                var city = $(this).val();
+                if (city) {
+                    $.ajax({
+                        type: "POST",
+                        url: "getCityInfo.php",
+                        data: { city: city },
+                        success: function (response) {
+                            $('.cityInfo').html(response);
+                        }
+                    });
+                } else {
+                    $('.cityInfo').html('');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
