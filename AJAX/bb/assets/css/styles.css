@@ -1,0 +1,19 @@
+.list-email {
+	font-style: italic;
+}
+
+.list-address {
+	margin-top: -14px;
+    margin-bottom: 0px;
+    font-size: 12px;
+}
+
+/*Form Validation Error Styles*/
+.form-group.error label,
+.form-group.error .error-message {
+	color:  red;
+}
+
+.form-group.error .form-control {
+	border: 1px solid red;
+}

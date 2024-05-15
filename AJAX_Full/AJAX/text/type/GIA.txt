@@ -1,0 +1,5 @@
+<option value="Default" >Select Type</option> 
+<option value='ACPC_GIA'> ACPC GIA </option>
+<option value='D2D_GIA'> D2D Student GIA</option>
+<option value='TRANSFER_GIA'> Transfer Student GIA</option>
+<option value='CGQ_GIA'>Central Gov. Student GIA</option>

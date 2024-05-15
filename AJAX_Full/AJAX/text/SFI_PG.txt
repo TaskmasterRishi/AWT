@@ -1,0 +1,10 @@
+<option value="Default" >Select Branch</option> 
+
+<option value="CP">Computer Engineering</option>
+<option value="MD">Machine Design</option>
+<option value="EP">Electrical Power System (EE)</option>
+<option value="TS">Trasporatation System Engineering</option>
+<option value="CM">Construction Engineering & Management</option>
+<option value="EN">Environmental Engineering</option>
+<option value="SE">Structural Engineering</option>
+<option value="IF">Infrastructure Engineering & Technology</option>

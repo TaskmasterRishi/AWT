@@ -1,0 +1,1 @@
+<?php $age = array("Harry" => "21", "Ron" => "19", "Malfoy" => "23"); ksort($age); foreach($age as $x => $x_value) { echo "Key=" . $x . ", Value=" . $x_value; echo "<br>"; } ?>

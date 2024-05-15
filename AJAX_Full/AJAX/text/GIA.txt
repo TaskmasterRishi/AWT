@@ -1,0 +1,7 @@
+<option value="Default" >Select Branch</option> 
+<option value="CE">Civil Engineering</option>
+<option value="CP">Computer Engineering</option>
+<option value="EE">Electrical Engineering</option>
+<option value="EL">Electronics Engineering</option>
+<option value="ME">Mechanical Engineering</option>
+<option value="PE">Production Engineering</option>

@@ -1,0 +1,1 @@
+http://blog.techwheels.net/send-email-from-localhost-wamp-server-using-sendmail/
