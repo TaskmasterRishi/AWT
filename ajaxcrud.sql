@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 15, 2024 at 03:48 PM
+-- Generation Time: May 15, 2024 at 07:09 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -48,6 +48,28 @@ INSERT INTO `city_info` (`ID`, `city_name`, `temprature`, `Date_time`, `populati
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `students`
+--
+
+CREATE TABLE `students` (
+  `ID` int(10) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `age` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `students`
+--
+
+INSERT INTO `students` (`ID`, `username`, `email`, `age`) VALUES
+(1, 'rishipatoliya', 'rishipatodiya12@gmail.com', 20),
+(2, 'rishi', 'patoliyarishi12@gmail.com', 19),
+(3, 'devansh chutiyo', 'devanshbhikhari@laudalasan.com', 250);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -63,7 +85,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`ID`, `username`, `password`) VALUES
 (2, 'rishipatoliya', '$2y$10$KHycZg8cKBwAK.M//Fnm7O4BnSOzA38r7/D7iBtA2mao4cUI1Uhae'),
-(3, 'rishi', '$2y$10$/ncoI/hRC.lHAx6DukYiMun2ADGB7LLKFIqt3j1wajpRefT/mtEfy');
+(3, 'rishi', '$2y$10$/ncoI/hRC.lHAx6DukYiMun2ADGB7LLKFIqt3j1wajpRefT/mtEfy'),
+(4, 'NIT', '$2y$10$PmUCkmkoeVgdno4N2OR9iuchVpE70O/om1LPtMnhj5Ibfy1ijtf/i');
 
 --
 -- Indexes for dumped tables
@@ -73,6 +96,12 @@ INSERT INTO `user` (`ID`, `username`, `password`) VALUES
 -- Indexes for table `city_info`
 --
 ALTER TABLE `city_info`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `students`
+--
+ALTER TABLE `students`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -92,10 +121,16 @@ ALTER TABLE `city_info`
   MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `students`
+--
+ALTER TABLE `students`
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

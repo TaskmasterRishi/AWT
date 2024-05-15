@@ -39,7 +39,7 @@
                         if(response.trim() === 'success') {
                             $('#message').html("Registration successful! Redirecting to login page...");
                             setTimeout(function(){
-                                window.location.href = 'loginmain.html';
+                                window.location.href = 'loginmain.php';
                             }, 2000);
                         } else {
                             $('#message').html(response);

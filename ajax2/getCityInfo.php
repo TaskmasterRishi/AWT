@@ -6,8 +6,8 @@ if (mysqli_connect_errno()) {
     exit(1);
 }
 
-if (isset($_POST["city"])) {
-    $city = $_POST["city"];
+if (isset($_GET["city"])) {
+    $city = $_GET["city"];
     $sql = "SELECT * FROM city_info WHERE city_name = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('s', $city);

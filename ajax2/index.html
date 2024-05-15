@@ -25,7 +25,7 @@
                 var city = $(this).val();
                 if (city) {
                     $.ajax({
-                        type: "POST",
+                        type: "GET",
                         url: "getCityInfo.php",
                         data: { city: city },
                         success: function (response) {
