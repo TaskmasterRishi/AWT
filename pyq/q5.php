@@ -1,19 +1,18 @@
 <?php
-// Directory where images are located
-$imageDir = './images/';
+// Directory containing the images
+$imageDirectory = 'images/';
 
-// Get all image files from the directory
-$imageFiles = glob($imageDir . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+// Get an array of all image files in the directory
+$images = glob($imageDirectory . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
 
-// If there are images in the directory
-if (!empty($imageFiles)) {
-    // Shuffle the array to display images randomly
-    shuffle($imageFiles);
+// Check if there are any images in the directory
+if (count($images) > 0) {
+    // Select a random image
+    $randomImage = $images[array_rand($images)];
 
-    // Display the first image in the shuffled array
-    $randomImage = $imageFiles[0];
+    // Display the selected image
     echo '<img src="' . $randomImage . '" alt="Random Image">';
 } else {
-    echo 'No images found.';
+    echo 'No images found in the directory.';
 }
 ?>
