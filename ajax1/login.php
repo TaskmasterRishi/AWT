@@ -6,7 +6,7 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 $sql = "SELECT * FROM user WHERE username='$username'";
-$result = $conn->query($sql);
+$result = mysqli_query( $conn, $sql );
 
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Upload</title>
 </head>
+
 <body>
     <form action="" method="post" enctype="multipart/form-data">
         Upload image:
@@ -12,6 +14,7 @@
         <button type="submit" name="submit">Upload</button>
     </form>
 </body>
+
 </html>
 
 <?php
@@ -31,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($fileError === UPLOAD_ERR_OK) {
             $fileExt = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
-            $allowed = array('jpeg', 'jpg', 'png', 'pdf');
+            $allowed = array('jpeg', 'jpg', 'png', 'pdf', 'gif');
 
             if (in_array($fileExt, $allowed)) {
                 if ($fileSize < 10000000) {

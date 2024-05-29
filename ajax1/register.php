@@ -11,6 +11,15 @@ if ($password !== $confirm_password) {
     exit();
 }
 
+$check = "SELECT * FROM user WHERE username = '$username'";
+$result = $conn->query($check);
+
+if ($result->num_rows > 0) {
+    echo "User_exists";
+    $conn->close();
+    exit();
+}
+
 $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
 $sql = "INSERT INTO user (username, password) VALUES ('$username', '$hashed_password')";
